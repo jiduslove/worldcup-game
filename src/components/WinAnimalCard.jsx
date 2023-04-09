@@ -6,7 +6,7 @@ const WinAnimalCard = ({ animal }) => {
       </div>
       <img
         className="border-8 border-white shadow-lg shadow-white w-96"
-        src={`${process.env.PUBLIC_URL}/images/${animal}.jpeg`}
+        src={`${process.env.PUBLIC_URL}/images/${animal}.jpg`}
       />
       <div className="text-2xl mt-4 font-bold">
         💕💕💕 Winner is {animal} 💕💕💕

@@ -4,7 +4,7 @@ const AnimalCard = ({ animal, choice, onClickChoice }) => {
     <div className="flex flex-col justify-normal items-center">
       <img
         className="border-8 border-white shadow-lg shadow-white w-96"
-        src={`${process.env.PUBLIC_URL}/images/${animal}.jpeg`}
+        src={`${process.env.PUBLIC_URL}/images/${animal}.jpg`}
       />
       <div className="text-2xl mt-4 font-bold">{animal} 💕💕💕</div>
       <button

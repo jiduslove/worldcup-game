@@ -20,16 +20,16 @@ const Worldcup = () => {
     let shuffleAnimalData = animalData.sort(() => {
       return Math.random() - 0.5; //배열의 요소를 무작위로 섞는 코드(return Math.random() - 0.5;)
     });
-
     setShuffleAnimal(shuffleAnimalData);
   }, []); //처음에만 동물들이 경쟁하는 부분이 보여지도록 반복되지 않게 하는 코드.
+
   useEffect(() => console.log(nextRound), [nextRound]);
   useEffect(() => {
     if (choice === end) {
-      setShuffleAnimal(nextRound); // 1.nextRound에 담긴 동물들을 shuffleAnimal로 옮긴다.
-      setNextRound([]); // 2. nextRound 초기화 []
-      setEnd(end / 2); // choice === end 가 같으면 end를 2로 나눠라.
-      setChoice(0); // 3. 16강 -> 8강 -> 4강 -> choice 0
+      setShuffleAnimal(nextRound); // 1.nextRound에 담긴 동물들을 shuffleAnimal로 옮긴다.이를 통해 다음 라운드에서 사용할 동물 데이터를 무작위로 섞은 상태로 초기화.
+      setNextRound([]); // 2. 다음라운드로 넘어가면 배열안에 있던 동물들을 초기화해주고 다시 다음라운드의 동물들로 저장해야 하기 때문에 새로운 []를 넣어 공간을 다시 확보해줬다.
+      setEnd(end / 2); // choice === end 가 같으면 end를 2로 나누라는 의미로 end 값을 2로 나누어 새로운 라운드에서 사용할 동물 쌍의 개수를 결정하도록 하였다.
+      setChoice(0); // 3. choice 값을 0으로 초기화해준다. 이를 통해 새로운 라운드에서 선택을 다시 시작할 수 있도록 조건을 만든다.
     }
   }, [choice]);
 
